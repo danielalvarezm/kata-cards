@@ -12,8 +12,8 @@ export class Main {
     let player2Score = 0;
 
     for (let i = 0; i < player1.length; i++) {
-      const card1 = this.cards.indexOf(player1[i]);
-      const card2 = this.cards.indexOf(player2[i]);
+      const card1 = this.cards.indexOf(player1[i].toUpperCase());
+      const card2 = this.cards.indexOf(player2[i].toUpperCase());
       if (card1 == -1 || card2 == -1) {
         return 'Error: Someone use an unknow card';
       }
