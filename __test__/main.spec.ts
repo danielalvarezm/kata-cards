@@ -6,15 +6,22 @@ describe('Cards kata', () => {
   
   it('The person with the highest card wins', () => {
     
-    expect(main.playerWins(['3'], ['1'])).toBe('Player 1 wins!');
-    expect(main.playerWins(['1'], ['5'])).toBe('Player 2 wins!');
-    expect(main.playerWins(['K'], ['J'])).toBe('Player 1 wins!');
-    expect(main.playerWins(['4'], ['Q'])).toBe('Player 2 wins!');
+    expect(main.playerWins(['3'], ['1'])).toBe('Player 1 wins 1 to 0!');
+    expect(main.playerWins(['1'], ['5'])).toBe('Player 2 wins 1 to 0!');
+    expect(main.playerWins(['K'], ['J'])).toBe('Player 1 wins 1 to 0!');
+    expect(main.playerWins(['4'], ['Q'])).toBe('Player 2 wins 1 to 0!');
   });
 
   it('Draw between the two players', () => {
     
-    expect(main.playerWins(['4'], ['4'])).toBe('Draw!');
-    expect(main.playerWins(['K'], ['K'])).toBe('Draw!');
+    expect(main.playerWins(['4'], ['4'])).toBe('Draw 0 to 0!');
+    expect(main.playerWins(['K'], ['K'])).toBe('Draw 0 to 0!');
+  });
+
+  it('Wins the player with the highest score', () => {
+    
+    expect(main.playerWins(['4', '6'], ['1', '2'])).toBe('Player 1 wins 2 to 0!');
+    expect(main.playerWins(['1', '3'], ['4', '5'])).toBe('Player 2 wins 2 to 0!');
+
   });
 });
