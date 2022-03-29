@@ -8,5 +8,7 @@ describe('Cards kata', () => {
     
     expect(main.playerWins(['3'], ['1'])).toBe('Player 1 wins!');
     expect(main.playerWins(['1'], ['5'])).toBe('Player 2 wins!');
+    expect(main.playerWins(['K'], ['J'])).toBe('Player 1 wins!');
+    expect(main.playerWins(['4'], ['Q'])).toBe('Player 2 wins!');
   });
 });
