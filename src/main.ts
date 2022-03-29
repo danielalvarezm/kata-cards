@@ -5,7 +5,7 @@ export class Main {
 
   public playerWins(player1: string[], player2: string[]): string {
     if (player1.length != player2.length) {
-      return 'Error: One player has less cards';
+      return 'Error: Someone has less cards';
     }
 
     let player1Score = 0;
