@@ -1,8 +1,12 @@
+/* eslint-disable prettier/prettier */
 import { Main } from '../src/main';
 
 describe('Cards kata', () => {
+  const main = new Main();
+  
   it('The person with the highest card wins', () => {
-    //const main = new Main('Hello world');
-    expect(playerWins(['1'], ['5'])).toBe('Player 2 wins!');
+    
+    expect(main.playerWins(['3'], ['1'])).toBe('Player 1 wins!');
+    expect(main.playerWins(['1'], ['5'])).toBe('Player 2 wins!');
   });
 });
