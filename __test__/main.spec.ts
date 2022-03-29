@@ -11,4 +11,10 @@ describe('Cards kata', () => {
     expect(main.playerWins(['K'], ['J'])).toBe('Player 1 wins!');
     expect(main.playerWins(['4'], ['Q'])).toBe('Player 2 wins!');
   });
+
+  it('Draw between the two players', () => {
+    
+    expect(main.playerWins(['4'], ['4'])).toBe('Draw!');
+    expect(main.playerWins(['K'], ['K'])).toBe('Draw!');
+  });
 });
