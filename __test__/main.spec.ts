@@ -16,6 +16,7 @@ describe('Cards kata', () => {
     
     expect(main.playerWins(['4'], ['4'])).toBe('Draw 0 to 0!');
     expect(main.playerWins(['K'], ['K'])).toBe('Draw 0 to 0!');
+    expect(main.playerWins(['K', '2'], ['5', '9'])).toBe('Draw 1 to 1!');
   });
 
   it('Wins the player with the highest score', () => {
