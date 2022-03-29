@@ -4,13 +4,28 @@ export class Main {
   constructor() {}
 
   public playerWins(player1: string[], player2: string[]): string {
-    let result = 'Draw 0 to 0!';
-    if (this.cards.indexOf(player1[0]) > this.cards.indexOf(player2[0])) {
-      result = 'Player 1 wins 1 to 0!';
+    let player1Score = 0;
+    let player2Score = 0;
+
+    for (let i = 0; i < player1.length; i++) {
+      const card1 = this.cards.indexOf(player1[i]);
+      const card2 = this.cards.indexOf(player2[i]);
+
+      if (card1 > card2) {
+        player1Score++;
+      } else if (card1 < card2) {
+        player2Score++;
+      }
     }
 
-    if (this.cards.indexOf(player2[0]) > this.cards.indexOf(player1[0])) {
-      result = 'Player 2 wins 1 to 0!';
+    let result = `Draw ${player1Score} to ${player2Score}!`;
+
+    if (player1Score > player2Score) {
+      result = `Player 1 wins ${player1Score} to ${player2Score}!`;
+    }
+
+    if (player1Score < player2Score) {
+      result = `Player 2 wins ${player1Score} to ${player2Score}!`;
     }
 
     return result;
