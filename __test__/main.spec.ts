@@ -22,6 +22,12 @@ describe('Cards kata', () => {
     
     expect(main.playerWins(['4', '6'], ['1', '2'])).toBe('Player 1 wins 2 to 0!');
     expect(main.playerWins(['1', '3'], ['4', '5'])).toBe('Player 2 wins 0 to 2!');
-
   });
+
+  it('One of the players has less cards', () => {
+    
+    expect(main.playerWins(['4', '6'], ['1'])).toBe('Error: Player 2 has less cards');
+    expect(main.playerWins(['1'], ['4', '5', 'K'])).toBe('Error: Player 1 has less cards');
+  });
+
 });
