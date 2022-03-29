@@ -4,6 +4,10 @@ export class Main {
   constructor() {}
 
   public playerWins(player1: string[], player2: string[]): string {
+    if (player1.length != player2.length) {
+      return 'Error: One player has less cards';
+    }
+
     let player1Score = 0;
     let player2Score = 0;
 
