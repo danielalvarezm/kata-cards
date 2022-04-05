@@ -12,6 +12,9 @@ public class Cards {
         }
         char player1Card = player1Cards[0];
         char player2Card = player2Cards[0];
+        if(this.CARDS.indexOf(player1Card) == -1 || this.CARDS.indexOf(player2Card) == -1) {
+            throw new Exception("One of the players use an unknown card");
+        }
         if (this.CARDS.indexOf(player1Card) > this.CARDS.indexOf(player2Card)) {
             return "Player 1 wins 1 to 0!";
         }
