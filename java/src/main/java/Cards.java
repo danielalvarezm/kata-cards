@@ -17,7 +17,9 @@ public class Cards {
         }
         if (this.CARDS.indexOf(player1Card) > this.CARDS.indexOf(player2Card)) {
             return "Player 1 wins 1 to 0!";
+        } else if (this.CARDS.indexOf(player1Card) < this.CARDS.indexOf(player2Card)) {
+            return "Player 2 wins 0 to 1!";
         }
-        return "Player 2 wins 0 to 1!";
+        return "Draw!";
     }
 }

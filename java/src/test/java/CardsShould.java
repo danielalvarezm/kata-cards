@@ -37,4 +37,9 @@ public class CardsShould {
         String expectedMessage = "One of the players use an unknown card";
         assertEquals(expectedMessage, exception.getMessage());
     }
+
+    @Test
+    public void draw_between_the_players() throws Exception {
+        assertEquals(cards.playerWins(new char[] {'1'}, new char[] {'1'}),"Draw!");
+    }
 }
