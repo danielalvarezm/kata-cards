@@ -42,4 +42,10 @@ public class CardsShould {
     public void draw_between_the_players() throws Exception {
         assertEquals(cards.playerWins(new char[] {'1'}, new char[] {'1'}),"Draw!");
     }
+
+    @Test
+    public void wins_the_player_with_the_highest_score() throws Exception {
+        assertEquals(cards.playerWins(new char[] {'1','4'}, new char[] {'2','K'}),"Player 2 wins 0 to 2!");
+        assertEquals(cards.playerWins(new char[] {'2','5','K'}, new char[] {'1','7','Q'}),"Player 1 wins 2 to 1!");
+    }
 }
