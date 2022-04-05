@@ -1,14 +1,17 @@
 import java.util.ArrayList;
 
 public class Cards {
-    private final String CARDS = "123456789TJQK";
+    private final String CARDS = "123456789JQK";
 
     public Cards() {
     }
 
-    public String playerWins(String[] player1Cards, String[] player2Cards) {
-        String player1Card = player1Cards[0];
-        String player2Card = player2Cards[0];
+    public String playerWins(char[] player1Cards, char[] player2Cards) throws Exception {
+        if(player1Cards.length == 0 || player2Cards.length == 0) {
+            throw new Exception("The minimum number of cards must be 1");
+        }
+        char player1Card = player1Cards[0];
+        char player2Card = player2Cards[0];
         if (this.CARDS.indexOf(player1Card) > this.CARDS.indexOf(player2Card)) {
             return "Player 1 wins 1 to 0!";
         }
