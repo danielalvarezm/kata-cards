@@ -7,11 +7,16 @@ public class Cards {
     }
 
     public String playerWins(char[] player1Cards, char[] player2Cards) throws Exception {
-        int scorePlayer1 = 0;
-        int scorePlayer2 = 0;
         if(player1Cards.length == 0 || player2Cards.length == 0) {
             throw new Exception("The minimum number of cards must be 1");
         }
+        if(player1Cards.length != player2Cards.length) {
+            throw new Exception("One of the players has less cards");
+        }
+
+        int scorePlayer1 = 0;
+        int scorePlayer2 = 0;
+
         for(int i = 0; i < player1Cards.length; i++) {
             int player1Card = CARDS.indexOf(player1Cards[i]);
             int player2Card = CARDS.indexOf(player2Cards[i]);

@@ -48,4 +48,11 @@ public class CardsShould {
         assertEquals(cards.playerWins(new char[] {'1','4'}, new char[] {'2','K'}),"Player 2 wins 0 to 2!");
         assertEquals(cards.playerWins(new char[] {'2','5','K'}, new char[] {'1','7','Q'}),"Player 1 wins 2 to 1!");
     }
+
+    @Test
+    public void one_of_the_players_has_less_cards() throws Exception {
+        Exception exception = assertThrows(Exception.class, () -> cards.playerWins(new char[] {'1','4'}, new char[] {'2','K','Q'}));
+        String expectedMessage = "One of the players has less cards";
+        assertEquals(expectedMessage, exception.getMessage());
+    }
 }
